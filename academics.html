@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Work+Sans:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2f3132",
+                        "secondary-fixed": "#ffdf92",
+                        "secondary-container": "#fecb32",
+                        "primary-container": "#811026",
+                        "surface-variant": "#e3e2e3",
+                        "outline-variant": "#debfbf",
+                        "surface-dim": "#dadadb",
+                        "surface": "#faf9fa",
+                        "surface-container-low": "#f4f3f4",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#ff8a91",
+                        "on-secondary-fixed-variant": "#594400",
+                        "surface-tint": "#ab3241",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed-dim": "#ffb3b5",
+                        "on-primary-fixed-variant": "#8a182c",
+                        "tertiary-fixed": "#e4e2e1",
+                        "on-surface-variant": "#574142",
+                        "on-background": "#1a1c1d",
+                        "secondary": "#755b00",
+                        "inverse-on-surface": "#f1f0f1",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb3b5",
+                        "on-surface": "#1a1c1d",
+                        "surface-bright": "#faf9fa",
+                        "surface-container-high": "#e8e8e9",
+                        "tertiary": "#2a2a2a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#adabab",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "background": "#faf9fa",
+                        "outline": "#8b7171",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdada",
+                        "on-secondary-container": "#705600",
+                        "on-primary-fixed": "#40000c",
+                        "secondary-fixed-dim": "#f2c025",
+                        "tertiary-container": "#404040",
+                        "surface-container-highest": "#e3e2e3",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "primary": "#5c0015",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#241a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Work Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(45deg, #5c0015 0%, #811026 100%);
+        }
+        .glass-panel {
+            background: rgba(250, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#1a1c1d]/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex items-center justify-between px-8 py-4 max-w-screen-2xl mx-auto">
+<a class="font-['Work_Sans'] font-black text-xl tracking-tighter text-[#811026] dark:text-[#ffdadb]" href="index.html">UMD Consumer Insight &amp; Analytics</a>
+<div class="hidden md:flex items-center space-x-8 font-['Work_Sans'] font-medium text-sm tracking-tight">
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="index.html">Home</a>
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="about.html">About</a>
+<a class="text-[#811026] dark:text-[#fecb32] border-b-2 border-[#811026] dark:border-[#fecb32] pb-1 transition-all duration-300" href="academics.html">Academics</a>
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="faculty.html">Faculty</a>
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="centers.html">Community</a>
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="news.html">News</a>
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="info.html">Info</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="inline-flex px-5 py-2 text-sm font-semibold rounded-xl border-2 border-[#811026] text-[#811026] hover:bg-[#811026] hover:text-white transition-all duration-300" href="adminlogin.html">Staff Login</a>
+<a class="inline-flex px-5 py-2 rounded-xl bg-[#811026] text-white hover:bg-[#fecb32] hover:text-[#1a1c1d] transition-all duration-300" href="contact.html">Contact Us</a>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="px-8 py-20 max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2 space-y-6">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase">Department of Marketing</span>
+<h1 class="text-6xl md:text-8xl font-headline font-black text-primary leading-[0.9] tracking-tighter">
+                    Where Data <br/> Meets <span class="text-secondary-container">Desire</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                    Master the science of consumer behavior. Our academic programs bridge the gap between complex data sets and human psychology to drive modern business strategy.
+                </p>
+</div>
+<div class="w-full md:w-1/2 aspect-[4/5] relative overflow-hidden rounded-xl">
+<img alt="Data visualization dashboard" class="w-full h-full object-cover" data-alt="Modern high-tech analytics lab with large glass screens showing glowing complex data visualizations and students collaborating in soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB001qvszKXjnVhlWYAAa3zhJtYG9NqqlmqUVlFPGhrMIm44PRfmpG2y8LOY2NVEMd26GS_ZRIxP7pJCbrFG9ZCctay70BPvZNitrOyIqr2LhIAgYgwk4MWwZPjsNvoNPFB2Ps63GsK_252j3fgmOkQ0jt78uBVTcRyFtQARjvtV6q7nofhsYG3kTBfODw0BjZ64D-eQXsbXPYnWL_djWONEYX1-59SNz2Ff0_pjI5n9qiBrFZ5lGUSsI1g_BtZ8tI_wUlUGfj0plYa"/>
+<div class="absolute bottom-8 left-8 right-8 glass-panel p-8 rounded-xl">
+<div class="text-4xl font-headline font-bold text-primary-container">100%</div>
+<div class="text-sm font-label uppercase tracking-widest font-bold">Career Placement Rate</div>
+</div>
+</div>
+</section>
+<!-- Program Bento Grid -->
+<section class="bg-surface-container-low py-24 px-8">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<h2 class="text-4xl font-headline font-black tracking-tighter uppercase text-primary">Academic Programs</h2>
+<div class="h-px bg-outline-variant flex-grow mx-8 mb-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Undergraduate Card -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl bg-primary-container p-12 flex flex-col justify-between min-h-[450px]">
+<div class="relative z-10 space-y-4">
+<h3 class="text-4xl font-headline font-bold text-white">B.A. in Consumer Insight &amp; Analytics</h3>
+<p class="text-on-primary-container text-lg max-w-md">Our flagship undergraduate program focusing on data-driven marketing, consumer psychology, and predictive modeling.</p>
+<ul class="space-y-3 pt-4">
+<li class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+                                    120 Credit Hours
+                                </li>
+<li class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+                                    Integrated Lab Research
+                                </li>
+</ul>
+</div>
+<button class="relative z-10 self-start mt-8 text-secondary-container font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                            Program Details <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="Group of diverse university students working together on laptops in a modern glass-walled library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK2MD_4Eyh0pgVmARO02wF8Zn_zHVqSYWNamR6742U6NagHfHPAPYWfSvkN82YVFDfViVVSk2EbDiwoe38BEsrKacGai3s1WaHMTabnIbnAWHZTzwA7ZMp5wVk0Dn7NX3aG9VhQ32CZe_PaSNhq324_QUQLXRYLp0QnJ31kZNVffBy9rmn77Zfdw35SSLwYpT55wEKhW5s9pRPvOvwIeP7DBsN_fprPsap5sejLjkLoSGUgbQFvs7mqAlIZId__aGlDUFEFr3rFMJM"/>
+</div>
+</div>
+<!-- Graduate Card -->
+<div class="bg-surface-container-highest p-12 rounded-xl flex flex-col justify-between">
+<div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4">M.S. Applied Analytics</h3>
+<p class="text-on-surface-variant mb-8 text-sm leading-relaxed">Advanced quantitative methods for professionals seeking leadership roles in market intelligence.</p>
+<div class="space-y-4">
+<div class="p-4 bg-white rounded-lg">
+<span class="text-xs font-bold text-secondary uppercase tracking-tighter">Format</span>
+<p class="font-medium">Hybrid / Online</p>
+</div>
+<div class="p-4 bg-white rounded-lg">
+<span class="text-xs font-bold text-secondary uppercase tracking-tighter">Duration</span>
+<p class="font-medium">18 Months</p>
+</div>
+</div>
+</div>
+<button class="mt-8 text-primary font-bold flex items-center gap-2">
+                            Explore Graduate <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Curriculum Map Section -->
+<section class="py-24 px-8 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 sticky top-32 h-fit">
+<h2 class="text-5xl font-headline font-black tracking-tighter text-primary mb-6">Curriculum Journey</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">A multi-disciplinary map designed to take you from core marketing principles to high-level strategic data manipulation.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center font-bold">01</span>
+<span class="font-headline font-bold">The Foundations</span>
+</div>
+<div class="flex items-center gap-4 opacity-40">
+<span class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-bold">02</span>
+<span class="font-headline font-bold">Data Mastery</span>
+</div>
+<div class="flex items-center gap-4 opacity-40">
+<span class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-bold">03</span>
+<span class="font-headline font-bold">Strategic Application</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8">
+<div class="space-y-12">
+<!-- Year 1 -->
+<div class="relative pl-12 border-l-4 border-secondary-container">
+<div class="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-secondary-container"></div>
+<h4 class="text-2xl font-headline font-bold mb-4">Core Principles (Year 1-2)</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container p-6 rounded-xl">
+<div class="text-xs font-bold text-primary mb-1">MKTG</div>
+<h5 class="font-bold">Consumer Behavior</h5>
+<p class="text-sm mt-2">Psychological and sociological aspects of consumer decision-making.</p>
+</div>
+<div class="bg-surface-container p-6 rounded-xl">
+<div class="text-xs font-bold text-primary mb-1">CORE</div>
+<h5 class="font-bold">Analytics & Big Data</h5>
+<p class="text-sm mt-2">Foundational analysis for managing and summarizing transaction data.</p>
+</div>
+</div>
+</div>
+<!-- Year 3 -->
+<div class="relative pl-12 border-l-4 border-surface-container-highest">
+<div class="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-surface-container-highest"></div>
+<h4 class="text-2xl font-headline font-bold mb-4">Advanced Analytics (Year 3)</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container p-6 rounded-xl">
+<div class="text-xs font-bold text-primary mb-1">MKTG</div>
+<h5 class="font-bold">Marketing Research</h5>
+<p class="text-sm mt-2">Design and execution of data collection strategies.</p>
+</div>
+<div class="bg-surface-container p-6 rounded-xl">
+<div class="text-xs font-bold text-primary mb-1">CIA</div>
+<h5 class="font-bold">Data Visualization</h5>
+<p class="text-sm mt-2">Visual storytelling with Tableau, PowerBI, and Python.</p>
+</div>
+</div>
+</div>
+<!-- Year 4 -->
+<div class="relative pl-12 border-l-4 border-surface-container-highest">
+<div class="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-surface-container-highest"></div>
+<h4 class="text-2xl font-headline font-bold mb-4">Capstone &amp; Labs (Year 4)</h4>
+<div class="bg-surface-container p-6 rounded-xl">
+<div class="text-xs font-bold text-primary mb-1">CIA</div>
+<h5 class="font-bold">Advanced Modeling</h5>
+<p class="text-sm mt-2">Data transformation and modeling utilizing real-world client data.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experiential Learning Section -->
+<section class="bg-tertiary text-white py-24 px-8">
+<div class="max-w-screen-2xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-5xl font-headline font-black tracking-tighter">Beyond the Classroom</h2>
+<p class="text-tertiary-fixed-dim max-w-2xl mx-auto mt-4">Practical experience is built into our DNA. From our state-of-the-art Analytics Lab to Fortune 500 partnerships.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div class="group relative aspect-video overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close up of eye tracking technology and brain activity sensors in a high-tech university research laboratory" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQy1jVCBYv2WVpoNcrJiwGdDLaHTJODs3TcWq5-gxTIujy86zrUFaK5ycxsxx4M3nNU6XWsV2cidvvN1PwrSU1tG5UIp2mwcdk6Yzpi3z4N6-69GthQDtqGuuHCTz05rPIRX21jIgJkRVOkTPawN6mwCyU05NFqKlRSfM3URSI6XsMrP-IDSrB3lzNMf1TE2iwPDMwA-m0dql8y8oFWIRHrKtloIdvPfjqUcGGx6troxMSFfU1DB-MnfD4dCpfAxf8mfmMLQhqeMQk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary to-transparent flex flex-col justify-end p-8">
+<h4 class="text-2xl font-headline font-bold">The Analytics Lab</h4>
+<p class="text-sm text-tertiary-fixed-dim">24/7 access to exclusive software and industry-standard data sets.</p>
+</div>
+</div>
+<div class="flex flex-col justify-center space-y-8">
+<div class="flex gap-6">
+<div class="w-16 h-16 shrink-0 bg-primary-container rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">work</span>
+</div>
+<div>
+<h5 class="text-xl font-bold">Internship Pipeline</h5>
+<p class="text-tertiary-fixed-dim text-sm mt-2">Guaranteed internship placement support with partners like Target, Best Buy, and Schwan's Food Company.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-16 h-16 shrink-0 bg-secondary-container rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary">groups</span>
+</div>
+<div>
+<h5 class="text-xl font-bold">Analytics Competition Team</h5>
+<p class="text-tertiary-fixed-dim text-sm mt-2">Compete in national case study challenges using actual datasets from industry giants.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Career Pathways -->
+<section class="py-24 px-8 max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/3">
+<h2 class="text-5xl font-headline font-black tracking-tighter text-primary leading-tight">Career <br/>Pathways</h2>
+<p class="mt-6 text-on-surface-variant">Our graduates don't just find jobs; they lead industries. The intersection of analytics and consumer psychology is the fastest-growing sector in business.</p>
+<button class="mt-8 px-8 py-4 bg-primary text-white font-bold rounded-xl flex items-center gap-3">
+                        Career Services <span class="material-symbols-outlined">launch</span>
+</button>
+</div>
+<div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<h5 class="font-headline font-bold text-lg">Market Research Analyst</h5>
+<p class="text-sm text-on-surface-variant mt-2">Mean Salary: $73,000</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-secondary-container">
+<h5 class="font-headline font-bold text-lg">Customer Experience (CX) Manager</h5>
+<p class="text-sm text-on-surface-variant mt-2">Mean Salary: $92,000</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-secondary-container">
+<h5 class="font-headline font-bold text-lg">Consumer Data Scientist</h5>
+<p class="text-sm text-on-surface-variant mt-2">Mean Salary: $115,000</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<h5 class="font-headline font-bold text-lg">Digital Strategy Lead</h5>
+<p class="text-sm text-on-surface-variant mt-2">Mean Salary: $88,000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Degree Requirements Table (Simplified & Stylized) -->
+<section class="py-24 px-8 bg-surface-container-lowest">
+<div class="max-w-screen-2xl mx-auto">
+<div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+<div class="p-10 border-b border-surface-variant">
+<h3 class="text-3xl font-headline font-bold text-primary">Degree Requirements Overview</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 bg-surface-container">
+<div class="p-8 font-bold border-r border-surface-variant">Requirement Category</div>
+<div class="p-8 font-bold border-r border-surface-variant">Description</div>
+<div class="p-8 font-bold border-r border-surface-variant">Credits</div>
+<div class="p-8 font-bold">Key Benchmarks</div>
+</div>
+<div class="divide-y divide-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-4">
+<div class="p-8 font-medium">Liberal Education</div>
+<div class="p-8 text-on-surface-variant text-sm">Foundational university core courses.</div>
+<div class="p-8">35</div>
+<div class="p-8 text-sm italic">Complete by Semester 4</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4">
+<div class="p-8 font-medium">Business Core</div>
+<div class="p-8 text-on-surface-variant text-sm">Accounting, Finance, Management essentials.</div>
+<div class="p-8">42</div>
+<div class="p-8 text-sm italic">2.5 GPA Minimum</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4">
+<div class="p-8 font-medium">Major Specialized</div>
+<div class="p-8 text-on-surface-variant text-sm">Insight &amp; Analytics depth courses.</div>
+<div class="p-8">33</div>
+<div class="p-8 text-sm italic">Includes Capstone</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 px-8 py-12 bg-[#2a2a2a] dark:bg-[#000000]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="font-['Work_Sans'] font-bold text-lg text-white">
+                    University of Minnesota Duluth
+                </div>
+<p class="font-['Inter'] text-xs leading-relaxed tracking-wide text-gray-400">
+                    Consumer Insight &amp; Analytics Program<br/>
+                    Labovitz School of Business and Economics
+                </p>
+</div>
+<div class="flex flex-col space-y-4">
+<h6 class="text-white font-bold text-sm uppercase tracking-widest">Resources</h6>
+<a class="font-['Inter'] text-xs leading-relaxed tracking-wide text-gray-400 hover:text-white transition-transform duration-200 hover:translate-x-1" href="https://d.umn.edu/" target="_blank" rel="noopener noreferrer">UMD Home</a>
+<a class="font-['Inter'] text-xs leading-relaxed tracking-wide text-gray-400 hover:text-white transition-transform duration-200 hover:translate-x-1" href="info.html">Academic Calendar</a>
+<a class="font-['Inter'] text-xs leading-relaxed tracking-wide text-gray-400 hover:text-white transition-transform duration-200 hover:translate-x-1" href="contact.html">Employment</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h6 class="text-white font-bold text-sm uppercase tracking-widest">Support</h6>
+<a class="font-['Inter'] text-xs leading-relaxed tracking-wide text-gray-400 hover:text-white transition-transform duration-200 hover:translate-x-1" href="info.html">Accessibility</a>
+<a class="font-['Inter'] text-xs leading-relaxed tracking-wide text-gray-400 hover:text-white transition-transform duration-200 hover:translate-x-1" href="info.html">Privacy Policy</a>
+<a class="text-xs hover:text-white transition-transform duration-200 hover:translate-x-1" href="https://lsbe.d.umn.edu/" target="_blank" rel="noopener noreferrer">LSBE Home</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h6 class="text-[#fecb32] font-bold text-sm uppercase tracking-widest">Newsletter</h6>
+<p class="font-['Inter'] text-xs text-gray-400">Get the latest insights from our behavioral lab.</p>
+<div class="flex border-b border-gray-600 focus-within:border-[#fecb32] transition-colors pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-white text-xs w-full" placeholder="Email Address" type="email"/>
+<button class="material-symbols-outlined text-[#fecb32]">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-gray-800 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-['Inter'] text-xs leading-relaxed tracking-wide text-gray-400">
+                © 2024 University of Minnesota Duluth - Consumer Insight &amp; Analytics
+            </div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-gray-400 hover:text-[#fecb32] cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-[#fecb32] cursor-pointer transition-colors">database</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-[#fecb32] cursor-pointer transition-colors">public</span>
+</div>
+</div>
+</footer>
+</body></html>

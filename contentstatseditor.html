@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UMD Analytics Admin - Content Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;800;900&amp;family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1a1c1d",
+                    "secondary-container": "#fecb32",
+                    "outline": "#8b7171",
+                    "surface": "#faf9fa",
+                    "secondary-fixed-dim": "#f2c025",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#ab3241",
+                    "primary": "#5c0015",
+                    "background": "#faf9fa",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#8a182c",
+                    "on-tertiary-container": "#adabab",
+                    "tertiary-fixed": "#e4e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "inverse-surface": "#2f3132",
+                    "on-primary-container": "#ff8a91",
+                    "surface-dim": "#dadadb",
+                    "on-secondary-container": "#705600",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "inverse-on-surface": "#f1f0f1",
+                    "on-primary-fixed": "#40000c",
+                    "primary-container": "#811026",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#faf9fa",
+                    "surface-container": "#eeeeee",
+                    "tertiary-container": "#404040",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e3e2e3",
+                    "primary-fixed-dim": "#ffb3b5",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-surface-variant": "#574142",
+                    "primary-fixed": "#ffdada",
+                    "surface-container-high": "#e8e8e9",
+                    "on-secondary-fixed-variant": "#594400",
+                    "on-background": "#1a1c1d",
+                    "inverse-primary": "#ffb3b5",
+                    "outline-variant": "#debfbf",
+                    "secondary": "#755b00",
+                    "tertiary": "#2a2a2a",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#ffdf92",
+                    "surface-container-highest": "#e3e2e3",
+                    "surface-container-low": "#f4f3f4",
+                    "on-secondary-fixed": "#241a00",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Work Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar Component (NavigationDrawer) -->
+<aside class="h-full w-64 bg-[#f4f3f4] dark:bg-[#1a1c1d] flex flex-col py-6 pl-4 font-['Inter'] text-sm leading-relaxed shrink-0">
+<div class="mb-10 px-4">
+<h2 class="font-['Work_Sans'] font-bold text-[#811026] dark:text-[#ffdadb] text-xl tracking-tighter">Admin Portal</h2>
+<p class="text-on-surface-variant text-xs mt-1">Insight &amp; Analytics</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 py-3 px-4 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200 ease-in-out" href="admin.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 bg-[#811026] text-white rounded-r-full mr-4 font-semibold transition-all duration-200 ease-in-out" href="contentnewseditor.html">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span>Content Manager</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200 ease-in-out" href="contentstatseditor.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Student Data</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200 ease-in-out" href="news.html">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span>Analytics Reports</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200 ease-in-out" href="contact.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4 pr-8">
+<button class="w-full bg-primary-container text-white py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-primary transition-colors font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+<span>Generate Report</span>
+</button>
+<div class="mt-8 flex items-center gap-3 pb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional woman in a modern office with natural light and minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2g9RLuJX8Jw-ndSSRess72c0e9xizcyeAtO5gQU9H_SzFDr5xzPu5Ic0cMTjUIQ--UG_HYisgbIqP_sG_oAA-JYhGveJh8bI85Xy6qz8y_KS01FEajXZcbjDM_HVQSPBBsVrQayjqbBIkg4oPL8QDdyws8ZcTd6m-sBKc0chpyjTBnxDMTsDReTOw0RqNgNQsJsC-I-cnVAAnTd0laiQouDLQPOSQBC0s5IvCGFwKgq80ynguN_Ry0EbpmA-LKMeIQY17VOHJtknd"/>
+</div>
+<div>
+<p class="text-xs font-bold">Admin Profile</p>
+<p class="text-[10px] text-on-surface-variant">Super User</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow overflow-y-auto no-scrollbar bg-surface">
+<!-- Header -->
+<header class="h-20 px-10 flex items-center justify-between sticky top-0 bg-surface/80 backdrop-blur-md z-10">
+<h1 class="font-headline font-extrabold text-2xl tracking-tighter text-primary-container">Content Editor</h1>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 border-2 border-outline-variant text-on-surface-variant rounded-xl text-sm font-semibold hover:bg-surface-container-low transition-colors">Discard</button>
+<button class="px-8 py-2 bg-secondary-container text-on-secondary-fixed font-bold rounded-xl text-sm shadow-sm hover:shadow-md transition-all">Publish Changes</button>
+</div>
+</header>
+<div class="px-10 py-6 max-w-[1200px] mx-auto space-y-12 pb-24">
+<!-- Section: Program Overview -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="font-headline font-bold text-3xl tracking-tight text-tertiary">Program Overview</h3>
+<span class="text-xs text-on-surface-variant uppercase tracking-widest font-bold">Editorial Section</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+<div class="md:col-span-8">
+<label class="block text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wide">Main Narrative</label>
+<textarea class="w-full h-64 p-6 bg-surface-container-low border-none rounded-xl text-on-surface leading-relaxed focus:ring-2 focus:ring-primary-container focus:bg-white transition-all shadow-inner" placeholder="Update the main program description...">The Consumer Insight &amp; Analytics major at UMD bridges the gap between raw data and strategic business decisions. Our curriculum is designed for those who seek to understand the 'why' behind consumer behavior using rigorous quantitative methods and advanced qualitative analysis. Students graduate with the ability to tell stories with data, influencing global marketing strategies.</textarea>
+</div>
+<div class="md:col-span-4 space-y-6">
+<div class="p-6 bg-surface-container-highest rounded-xl">
+<label class="block text-xs font-bold text-on-surface-variant mb-4 uppercase tracking-wide">Hero Banner Image</label>
+<div class="aspect-video bg-surface-container-low rounded-lg overflow-hidden group relative cursor-pointer border-2 border-dashed border-outline-variant hover:border-primary-container transition-colors">
+<img alt="Banner Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-40 transition-opacity" data-alt="modern glass architecture of a university building reflecting a clear blue sky and autumnal trees in Duluth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp-gsjcXVdPbgBn9_m8zqLgyZNZZHYDv6nzZRtfG6c_PgN190Ddd5DEUoxIdY4qG28W3A0in0QI5J6lP9gVymIWgJy1baVDfbDdfZ5G9M-tTnq_Oh36iKXKtxbFW9QGGQyjRscwfgCHS3rEF0SLM4cLUIMss6MECKs6gnWLi66JDMLObzONmXA1h8mD6gbSXKsMuX0O4j1rvwxBdmyOM2aoSbhP34q85VbsVZaFZBWfWUTrwbVRd3mKSZs38gGk7X3SsnZOYNRkiec"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="cloud_upload">cloud_upload</span>
+<span class="text-xs font-bold mt-2">Replace Banner</span>
+</div>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-3 italic">Preferred: 1920x1080px, &lt; 2MB</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: News & Events Management -->
+<section class="pt-8">
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="font-headline font-bold text-3xl tracking-tight text-tertiary">News &amp; Events Management</h3>
+<button class="text-xs font-bold text-primary flex items-center gap-2 px-4 py-2 border border-primary rounded-xl hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add_box">add_box</span>
+<span>Add News / Event</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- List Item 1 -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/30 flex flex-col md:flex-row gap-6">
+<div class="flex-grow grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-2">
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Title</label>
+<input class="w-full bg-transparent border-none p-0 text-sm font-semibold text-tertiary focus:ring-0" type="text" value="New Marketing Analytics Lab Opening"/>
+</div>
+<div>
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Date</label>
+<input class="w-full bg-transparent border-none p-0 text-sm font-medium text-tertiary focus:ring-0" type="date" value="2024-11-15"/>
+</div>
+<div>
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Category</label>
+<select class="w-full bg-transparent border-none p-0 text-sm font-medium text-tertiary focus:ring-0 appearance-none">
+<option selected="">News</option>
+<option>Event</option>
+</select>
+</div>
+<div class="md:col-span-4">
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Short Description</label>
+<textarea class="w-full bg-transparent border-none p-0 text-xs text-on-surface-variant focus:ring-0 leading-relaxed resize-none" rows="2">UMD is proud to announce the grand opening of our state-of-the-art analytics laboratory, featuring industry-leading software and collaborative spaces.</textarea>
+</div>
+</div>
+<div class="flex items-center gap-3 self-end md:self-center border-l border-outline-variant/30 pl-6">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors text-primary-container">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 rounded-full hover:bg-error/10 transition-colors text-error">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/30 flex flex-col md:flex-row gap-6">
+<div class="flex-grow grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-2">
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Title</label>
+<input class="w-full bg-transparent border-none p-0 text-sm font-semibold text-tertiary focus:ring-0" type="text" value="Guest Lecture: Data Ethics in AI"/>
+</div>
+<div>
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Date</label>
+<input class="w-full bg-transparent border-none p-0 text-sm font-medium text-tertiary focus:ring-0" type="date" value="2024-12-05"/>
+</div>
+<div>
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Category</label>
+<select class="w-full bg-transparent border-none p-0 text-sm font-medium text-tertiary focus:ring-0 appearance-none">
+<option>News</option>
+<option selected="">Event</option>
+</select>
+</div>
+<div class="md:col-span-4">
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Short Description</label>
+<textarea class="w-full bg-transparent border-none p-0 text-xs text-on-surface-variant focus:ring-0 leading-relaxed resize-none" rows="2">Join industry veteran Sarah Chen for an in-depth discussion on the ethical implications of artificial intelligence in modern consumer data modeling.</textarea>
+</div>
+</div>
+<div class="flex items-center gap-3 self-end md:self-center border-l border-outline-variant/30 pl-6">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors text-primary-container">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 rounded-full hover:bg-error/10 transition-colors text-error">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Specialized Stats Editor (Asymmetric Bento) -->
+<section class="pt-8">
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="font-headline font-bold text-3xl tracking-tight text-tertiary">High-Impact Statistics</h3>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-surface-container hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-primary-container text-white p-8 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary-container mb-4" data-icon="trending_up">trending_up</span>
+<label class="block text-[10px] uppercase font-bold opacity-70 mb-1">Statistic One</label>
+<input class="bg-transparent border-none p-0 text-4xl font-black focus:ring-0 w-full" type="text" value="100%"/>
+</div>
+<input class="bg-transparent border-none p-0 text-sm font-medium opacity-90 focus:ring-0 w-full mt-4" type="text" value="Placement Rate"/>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between border-b-4 border-secondary-container">
+<div>
+<span class="material-symbols-outlined text-primary-container mb-4" data-icon="work">work</span>
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Statistic Two</label>
+<input class="bg-transparent border-none p-0 text-4xl font-black text-tertiary focus:ring-0 w-full" type="text" value="48k"/>
+</div>
+<input class="bg-transparent border-none p-0 text-sm font-medium text-on-surface-variant focus:ring-0 w-full mt-4" type="text" value="Starting Salary Avg"/>
+</div>
+<div class="md:col-span-2 bg-surface-container-low p-8 rounded-xl grid grid-cols-2 gap-6 items-center">
+<div class="space-y-4">
+<div>
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Data Source</label>
+<input class="bg-transparent border-b border-outline-variant p-0 py-1 text-xs font-bold text-tertiary focus:ring-0 focus:border-primary-container w-full" type="text" value="Class of 2023 Survey"/>
+</div>
+<div>
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Update Frequency</label>
+<select class="bg-transparent border-none p-0 text-xs font-bold text-tertiary focus:ring-0 w-full appearance-none">
+<option>Annual</option>
+<option>Semester</option>
+</select>
+</div>
+</div>
+<div class="bg-white/50 rounded-lg p-4 backdrop-blur-sm border border-white/20">
+<p class="text-[10px] leading-tight text-on-surface-variant">These figures are automatically reflected on the Landing Page and Recruitment brochures.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Course Lists -->
+<section class="pt-8">
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="font-headline font-bold text-3xl tracking-tight text-tertiary">Curriculum Management</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Core Courses -->
+<div class="space-y-4">
+<div class="flex items-center justify-between border-b border-outline-variant pb-2">
+<h4 class="font-bold text-primary-container uppercase tracking-widest text-xs">Core Courses</h4>
+<span class="text-[10px] font-bold text-on-surface-variant">6 REQUIRED</span>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-4 group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-highest text-[10px] font-bold">01</span>
+<input class="flex-grow bg-transparent border-none p-0 text-sm font-semibold text-tertiary focus:ring-0" type="text" value="Consumer Behavior Analysis"/>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="drag_handle">drag_handle</span>
+</button>
+</li>
+<li class="flex items-center gap-4 group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-highest text-[10px] font-bold">02</span>
+<input class="flex-grow bg-transparent border-none p-0 text-sm font-semibold text-tertiary focus:ring-0" type="text" value="Marketing Research Methods"/>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="drag_handle">drag_handle</span>
+</button>
+</li>
+<li class="flex items-center gap-4 group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-highest text-[10px] font-bold">03</span>
+<input class="flex-grow bg-transparent border-none p-0 text-sm font-semibold text-tertiary focus:ring-0" type="text" value="Statistical Data Modeling"/>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="drag_handle">drag_handle</span>
+</button>
+</li>
+<li class="pt-2">
+<button class="text-xs font-bold text-primary flex items-center gap-2 hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
+<span>Add Core Requirement</span>
+</button>
+</li>
+</ul>
+</div>
+<!-- Major Electives -->
+<div class="space-y-4">
+<div class="flex items-center justify-between border-b border-outline-variant pb-2">
+<h4 class="font-bold text-primary-container uppercase tracking-widest text-xs">Major Courses</h4>
+<span class="text-[10px] font-bold text-on-surface-variant">4 ELECTIVES</span>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-4 group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-highest text-[10px] font-bold">E1</span>
+<input class="flex-grow bg-transparent border-none p-0 text-sm font-semibold text-tertiary focus:ring-0" type="text" value="Advanced Predictive Analytics"/>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="delete">delete</span>
+</button>
+</li>
+<li class="flex items-center gap-4 group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-highest text-[10px] font-bold">E2</span>
+<input class="flex-grow bg-transparent border-none p-0 text-sm font-semibold text-tertiary focus:ring-0" type="text" value="UX &amp; Digital Ethnography"/>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="delete">delete</span>
+</button>
+</li>
+<li class="flex items-center gap-4 group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-highest text-[10px] font-bold">E3</span>
+<input class="flex-grow bg-transparent border-none p-0 text-sm font-semibold text-tertiary focus:ring-0" type="text" value="Strategic Brand Management"/>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="delete">delete</span>
+</button>
+</li>
+<li class="pt-2">
+<button class="text-xs font-bold text-primary flex items-center gap-2 hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
+<span>Add Major Elective</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section: Experiential Learning Photos -->
+<section class="pt-8">
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="font-headline font-bold text-3xl tracking-tight text-tertiary">Student Experience Gallery</h3>
+<button class="text-xs font-bold text-primary-container px-4 py-2 bg-primary-fixed rounded-xl hover:bg-primary-fixed-dim transition-colors">Manage All Photos</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container-highest group relative">
+<img alt="Lab Work" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="diverse university students working together in a high-tech analytics lab with large monitors showing data visualizations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3_2gApvqQyoFPgF8JvsTsRw4qeZM0DQAOXaNzeEFcPW_fCNwDgYksKtKmPM5CVaOEaxuXgZr5p-dZg4s_wUHgy0m4eijy5TSM24c3PButEIChaRacFIFDDX_DEC_TGiFKlFoJUQqYKekZBjBmoWtgBX6UwShnU9CSbgk2Zc47ckizPHXAimAy5oQ0ON7l8yA1s5lK_9cyUr8Vg5QsZQJ36tlNl-Mrt2f60r0Eycv-2RTGnVXb7fFPSgTk6LRWlF5yjZnHIrCI3oYn"/>
+<div class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-lg shadow-lg"><span class="material-symbols-outlined text-sm text-primary" data-icon="edit">edit</span></button>
+</div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container-highest group relative">
+<img alt="Presentation" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="a young student confidently presenting data findings to a small group of professionals in a bright modern boardroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxhCraVGOZrZR88bmbF87GFbwM4RfKw5Uj2E_rQ6ltAEa0tqyfE6d1ioRfatiKcm2xusJGcGeQWNuDlQ4h3UtT6YVnoeD5iFiDFxa_G6uNOMf0BdIXwSXBuOnopotwB6_IJwlhuxwk9RD5DrBkCxMZuYM4HIdOvF1bjwYw5Y0npuoCGbJ7Ai_Q0xg93tdUX-CZxAcmj4vLz-0G6ZvB0_FzZAuJbUZUsWSvdBb4eiRDMeejsdE83wJB7ICCXc-EKow61Wyf91uuI1Es"/>
+<div class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-lg shadow-lg"><span class="material-symbols-outlined text-sm text-primary" data-icon="edit">edit</span></button>
+</div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container-highest group relative">
+<img alt="Collaboration" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="close-up of hands typing on a laptop and writing on a whiteboard with colorful sticky notes and analytical diagrams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWyCYBuuGRTuSfH3Q27McRYi8vwEPW-NVJD1BkzFH2i1POHKq6H-K8x3bmi0RlKz-Kd1o6mwEMLq5JEuXdUNE7VYO6nUuK_lnYeF3scmVn2JtN_CtZX-oXaPv4e2EA1LxkqfjGRaePb0VrbcrPozLv8rB7X7wYYjwFzDu1egrA8p0ib9qD_SvsQ_nhgVu_fz6zx6YFq4yPE2IblphtERMa7gGAD_tSc-T2WoiwwxwhFIf1uZ7IhYUgwW-LTnkVpdBXQoHa_59BByKt"/>
+<div class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-lg shadow-lg"><span class="material-symbols-outlined text-sm text-primary" data-icon="edit">edit</span></button>
+</div>
+</div>
+<div class="aspect-square rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center gap-2 hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary-container" data-icon="add_photo_alternate">add_photo_alternate</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Add New</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Component -->
+<footer class="w-full mt-24 bg-[#2a2a2a] dark:bg-[#000000] grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 font-['Inter'] text-xs font-light tracking-wide">
+<div class="md:col-span-1">
+<div class="font-['Work_Sans'] font-black uppercase text-[#fecb32] text-xl mb-6">UMD Analytics</div>
+<p class="text-[#e3e2e3]/70 leading-relaxed mb-6">Empowering the next generation of marketing leaders through rigorous data science and consumer insight excellence.</p>
+</div>
+<div>
+<h5 class="text-[#fecb32] font-bold mb-6 uppercase tracking-widest">Resources</h5>
+<ul class="space-y-4">
+<li><a class="text-[#e3e2e3]/70 hover:text-white transition-colors" href="about.html">Admin Guide</a></li>
+<li><a class="text-[#e3e2e3]/70 hover:text-white transition-colors" href="info.html">API Documentation</a></li>
+<li><a class="text-[#e3e2e3]/70 hover:text-white transition-colors" href="https://d.umn.edu/" target="_blank" rel="noopener noreferrer">UMD Home</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-[#fecb32] font-bold mb-6 uppercase tracking-widest">Support</h5>
+<ul class="space-y-4">
+<li><a class="text-xs hover:text-white transition-transform duration-200 hover:translate-x-1" href="https://lsbe.d.umn.edu/" target="_blank" rel="noopener noreferrer">LSBE Home</a></li>
+<li><a class="text-[#e3e2e3]/70 hover:text-white transition-colors" href="info.html">Privacy Policy</a></li>
+<li><a class="text-[#e3e2e3]/70 hover:text-white transition-colors" href="info.html">Accessibility</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<p class="text-[#e3e2e3]/50 mt-auto">© 2024 University of Minnesota Duluth. Consumer Insight &amp; Analytics Department.</p>
+</div>
+</footer>
+</main>
+</body></html>
