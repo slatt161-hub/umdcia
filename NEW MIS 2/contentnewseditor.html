@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>UMD Analytics Admin - Content Editor</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* CSS-Only Sidebar Toggle */
+        #admin-menu-toggle { display: none; }
+        #admin-menu-toggle:checked ~ #admin-sidebar {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased flex flex-col md:flex-row h-screen overflow-hidden">
+    <input type="checkbox" id="admin-menu-toggle" class="hidden">
+    
+    <!-- Mobile Admin Header -->
+    <div class="md:hidden flex shrink-0 items-center justify-between p-4 bg-surface/90 backdrop-blur-md border-b border-outline/10 w-full z-[100] h-16 shadow-sm">
+        <h1 class="font-['Work_Sans'] font-bold text-[#811026] dark:text-[#ffdadb] text-xl tracking-tighter ml-2 mt-1">Admin Portal</h1>
+        <label for="admin-menu-toggle" class="text-[#811026] p-2 bg-surface-container-high rounded-xl flex items-center justify-center cursor-pointer">
+            <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'wght' 600;">menu</span>
+        </label>
+    </div>
+
+    <!-- SideNavBar (NavigationDrawer) -->
+    <aside id="admin-sidebar" class="h-full w-64 border-r-0 fixed left-0 top-0 bg-[#f4f3f4] dark:bg-[#1a1c1d] flex flex-col py-6 pl-4 z-[110] -translate-x-full md:translate-x-0 transition-transform duration-300 md:shadow-none shadow-2xl">
+        <div class="mb-10 px-4">
+            <h1 class="font-['Work_Sans'] font-bold text-[#811026] dark:text-[#ffdadb] text-xl tracking-tighter">Admin Portal</h1>
+            <p class="font-['Inter'] text-sm leading-relaxed text-on-surface-variant opacity-70">Insight & Analytics</p>
+        </div>
+        <nav class="flex-grow space-y-1">
+            <a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200" href="admin.html">
+                <span class="material-symbols-outlined mr-3">dashboard</span>
+                <span class="font-['Inter'] text-sm">Dashboard</span>
+            </a>
+            <a class="flex items-center px-4 py-3 bg-[#811026] text-white font-semibold rounded-r-full mr-4 transition-all duration-200" href="contentnewseditor.html">
+                <span class="material-symbols-outlined mr-3">edit_note</span>
+                <span class="font-['Inter'] text-sm">Content Manager</span>
+            </a>
+            <a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200" href="analytics.html">
+                <span class="material-symbols-outlined mr-3">query_stats</span>
+                <span class="font-['Inter'] text-sm">Analytics Reports</span>
+            </a>
+            <a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200" href="inbox.html">
+                <span class="material-symbols-outlined mr-3">mail</span>
+                <span class="font-['Inter'] text-sm">Inbox</span>
+            </a>
+            <a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200" href="settings.html">
+                <span class="material-symbols-outlined mr-3">settings</span>
+                <span class="font-['Inter'] text-sm">Settings</span>
+            </a>
+        </nav>
+        <div class="mt-auto px-4 pr-8">
+            <a href="index.html" class="w-full mb-3 bg-surface-container-highest text-on-surface py-3 px-4 rounded-xl flex items-center justify-center gap-2 border border-outline-variant">
+                <span class="material-symbols-outlined text-sm">public</span>
+                <span class="text-xs font-semibold uppercase tracking-widest">View Main Site</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="ml-0 md:ml-64 flex-grow flex flex-col overflow-y-auto no-scrollbar bg-surface h-[calc(100vh-4rem)] md:h-full relative w-full transition-all duration-300">
+        <header class="h-20 px-10 flex items-center justify-between sticky top-0 bg-surface/80 backdrop-blur-md z-10">
+            <h1 class="font-headline font-extrabold text-2xl tracking-tighter text-primary-container">Content Editor</h1>
+            <div class="flex items-center gap-4">
+                <button class="px-6 py-2 border-2 border-outline-variant text-on-surface-variant rounded-xl text-sm font-semibold opacity-50 cursor-not-allowed">Discard</button>
+                <button class="px-8 py-2 bg-secondary-container text-on-secondary-fixed font-bold rounded-xl text-sm shadow-sm opacity-50 cursor-not-allowed">Publish Changes</button>
+            </div>
+        </header>
+
+        <div class="px-10 py-6 max-w-[1200px] mx-auto space-y-12 pb-24">
+            <!-- Section: Program Overview -->
+            <section>
+                <div class="flex items-baseline justify-between mb-8">
+                    <h3 class="font-headline font-bold text-3xl tracking-tight text-tertiary">Program Overview</h3>
+                    <span class="text-xs text-on-surface-variant uppercase tracking-widest font-bold">Editorial Section</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+                    <div class="md:col-span-8">
+                        <label class="block text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wide">Main Narrative</label>
+                        <textarea class="w-full h-64 p-6 bg-surface-container-low border-none rounded-xl text-on-surface leading-relaxed focus:ring-2 focus:ring-primary-container focus:bg-white transition-all shadow-inner">The Consumer Insights & Analytics (CIA) major at UMD develops students to transform consumer data related to buying behaviors into actionable insights for organizations. Students learn to present their insights as solutions to complex business problems. Our exclusive cohort approach gives you 24/7 access to a state-of-the-art analytics lab filled with industry data sets, ensuring you leave with deep proficiency in Excel, PowerBI, Tableau, and SQL.</textarea>
+                    </div>
+                    <div class="md:col-span-4 space-y-6">
+                        <div class="p-6 bg-surface-container-highest rounded-xl">
+                            <label class="block text-xs font-bold text-on-surface-variant mb-4 uppercase tracking-wide">Hero Banner Image</label>
+                            <div class="aspect-video bg-surface-container-low rounded-lg overflow-hidden group relative border-2 border-dashed border-outline-variant">
+                                <img alt="Banner Preview" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp-gsjcXVdPbgBn9_m8zqLgyZNZZHYDv6nzZRtfG6c_PgN190Ddd5DEUoxIdY4qG28W3A0in0QI5J6lP9gVymIWgJy1baVDfbDdfZ5G9M-tTnq_Oh36iKXKtxbFW9QGGQyjRscwfgCHS3rEF0SLM4cLUIMss6MECKs6gnWLi66JDMLObzONmXA1h8mD6gbSXKsMuX0O4j1rvwxBdmyOM2aoSbhP34q85VbsVZaFZBWfWUTrwbVRd3mKSZs38gGk7X3SsnZOYNRkiec"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Manage News -->
+            <section id="manage-news" class="pt-8 border-t border-outline-variant/30">
+                <div class="flex items-baseline justify-between mb-8">
+                    <h3 class="font-headline font-bold text-3xl tracking-tight text-tertiary">Manage News</h3>
+                </div>
+                
+                <div id="news-array-list" class="space-y-4">
+                    <div class="bg-surface p-4 rounded-xl border border-outline-variant/30 flex justify-between items-center">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-surface-container-low rounded-lg flex items-center justify-center text-primary-container font-black">N1</div>
+                            <div>
+                                <h5 class="font-bold text-sm">UMD Analytics Ranks High in National Survey</h5>
+                                <p class="text-[10px] text-on-surface-variant">May 10, 2026 • Published</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="p-2 rounded-lg hover:bg-surface-container-highest transition-colors"><span class="material-symbols-outlined text-sm">edit</span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Faculty Directory -->
+            <section id="manage-faculty" class="pt-8 mt-8 border-t border-outline-variant/30">
+                <div class="flex items-baseline justify-between mb-8">
+                    <h3 class="font-headline font-bold text-3xl tracking-tight text-tertiary">Faculty Profiles</h3>
+                    <button class="text-xs font-bold text-primary flex items-center gap-2 px-4 py-2 border border-primary rounded-xl opacity-50 cursor-not-allowed">
+                        <span class="material-symbols-outlined text-sm">person_add</span>
+                        <span>Add New Profile</span>
+                    </button>
+                </div>
+                <div id="faculty-editor-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Static Steve -->
+                    <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/30 flex flex-col gap-4">
+                        <div class="flex gap-4">
+                            <div class="w-24 h-24 rounded-full bg-surface-container-high overflow-hidden shrink-0 border-2 border-outline-variant">
+                                <img src="https://lsbe.d.umn.edu/sites/lsbe.d.umn.edu/files/styles/folwell_fifth/public/umd_fac_staff/ssharkey.jpg.avif?itok=EV7J8zfx" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-grow space-y-2">
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Name</label>
+                                    <input type="text" class="w-full bg-transparent border-b border-outline-variant/30 p-1 text-sm font-semibold text-tertiary" value="Steve Sharkey">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-1">Title</label>
+                                    <input type="text" class="w-full bg-transparent border-b border-outline-variant/30 p-1 text-sm font-medium text-tertiary" value="Director of UMD Consumer Insight & Analytics">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="w-full mt-24 bg-[#2a2a2a] grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 font-['Inter'] text-xs font-light tracking-wide">
+            <div class="md:col-span-1">
+                <div class="font-['Work_Sans'] font-black uppercase text-[#fecb32] text-xl mb-6">UMD Analytics</div>
+                <p class="text-[#e3e2e3]/70 leading-relaxed">© 2024 University of Minnesota Duluth. Consumer Insight & Analytics Department.</p>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
