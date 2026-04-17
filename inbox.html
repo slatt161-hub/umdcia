@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>UMD Analytics Admin - Inbox</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* CSS-Only Sidebar Toggle */
+        #admin-menu-toggle:checked ~ #admin-sidebar {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface flex min-h-screen">
+    <input type="checkbox" id="admin-menu-toggle" class="hidden">
+    
+    <!-- Mobile Admin Header -->
+    <div class="md:hidden flex items-center justify-between p-4 bg-surface/90 backdrop-blur-md border-b border-outline/10 fixed top-0 w-full z-[100] h-16 shadow-sm">
+        <h1 class="font-['Work_Sans'] font-bold text-[#811026] dark:text-[#ffdadb] text-xl tracking-tighter ml-2 mt-1">Admin Portal</h1>
+        <label for="admin-menu-toggle" class="text-[#811026] p-2 bg-surface-container-high rounded-xl flex items-center justify-center cursor-pointer">
+            <span class="material-symbols-outlined text-2xl" id="admin-menu-icon" style="font-variation-settings: 'wght' 600;">menu</span>
+        </label>
+    </div>
+
+    <!-- SideNavBar (NavigationDrawer) -->
+    <aside id="admin-sidebar" class="h-full w-64 border-r-0 fixed left-0 top-0 bg-[#f4f3f4] dark:bg-[#1a1c1d] flex flex-col py-6 pl-4 z-[110] -translate-x-full md:translate-x-0 transition-transform duration-300 md:shadow-none shadow-2xl">
+        <div class="mb-10 px-4">
+            <h1 class="font-['Work_Sans'] font-bold text-[#811026] dark:text-[#ffdadb] text-xl tracking-tighter">Admin Portal</h1>
+            <p class="font-['Inter'] text-sm leading-relaxed text-on-surface-variant opacity-70">Insight & Analytics</p>
+        </div>
+        <nav class="flex-grow space-y-1">
+            <a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200" href="admin.html">
+                <span class="material-symbols-outlined mr-3">dashboard</span>
+                <span class="font-['Inter'] text-sm">Dashboard</span>
+            </a>
+            <a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200" href="contentnewseditor.html">
+                <span class="material-symbols-outlined mr-3">edit_note</span>
+                <span class="font-['Inter'] text-sm">Content Manager</span>
+            </a>
+            <a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200" href="analytics.html">
+                <span class="material-symbols-outlined mr-3">query_stats</span>
+                <span class="font-['Inter'] text-sm">Analytics Reports</span>
+            </a>
+            <a class="flex items-center px-4 py-3 bg-[#811026] text-white font-semibold rounded-r-full mr-4 transition-all duration-200" href="inbox.html">
+                <span class="material-symbols-outlined mr-3">mail</span>
+                <span class="font-['Inter'] text-sm">Inbox</span>
+            </a>
+            <a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200" href="settings.html">
+                <span class="material-symbols-outlined mr-3">settings</span>
+                <span class="font-['Inter'] text-sm">Settings</span>
+            </a>
+        </nav>
+        <div class="mt-auto px-4 pr-8">
+            <a href="index.html" class="w-full mb-3 bg-surface-container-highest text-on-surface py-3 px-4 rounded-xl flex items-center justify-center gap-2 border border-outline-variant">
+                <span class="material-symbols-outlined text-sm">public</span>
+                <span class="text-xs font-semibold uppercase tracking-widest">View Main Site</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="ml-0 md:ml-64 flex-grow flex flex-col h-screen overflow-hidden bg-surface pt-16 md:pt-0 w-full transition-all duration-300">
+        <header class="h-20 px-10 flex items-center justify-between sticky top-0 bg-surface/80 backdrop-blur-md z-10 shrink-0">
+            <h2 class="font-headline font-extrabold text-2xl tracking-tighter text-primary-container">Inbox</h2>
+            <div class="flex items-center gap-4">
+                <button class="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-xl text-sm font-semibold opacity-50 cursor-not-allowed flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">refresh</span>
+                    Refresh
+                </button>
+            </div>
+        </header>
+
+        <div class="flex-grow flex overflow-hidden">
+            <!-- Mail List -->
+            <div class="w-1/3 border-r border-outline/20 flex flex-col overflow-y-auto bg-surface flex-shrink-0" id="inbox-list">
+                <!-- Static Mockup Messages -->
+                <div class="p-5 border-b border-outline/10 cursor-pointer bg-surface-container-lowest">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-primary truncate">Jane Smith</h4>
+                        <span class="text-[10px] text-on-surface-variant whitespace-nowrap ml-2">May 12, 2026</span>
+                    </div>
+                    <p class="text-xs font-semibold text-tertiary mb-1 truncate">Inquiry about CIA Fellowship</p>
+                    <p class="text-xs text-on-surface-variant truncate">Hello, I'm interested in the upcoming fellowship program...</p>
+                </div>
+                <div class="p-5 border-b border-outline/10 cursor-pointer bg-surface-container-low opacity-80">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-on-surface truncate">John Doe</h4>
+                        <span class="text-[10px] text-on-surface-variant whitespace-nowrap ml-2">May 11, 2026</span>
+                    </div>
+                    <p class="text-xs font-semibold text-tertiary mb-1 truncate">Lab access request</p>
+                    <p class="text-xs text-on-surface-variant truncate">Could you please update my keycard access for the analytics lab?</p>
+                </div>
+            </div>
+
+            <!-- Mail Viewer -->
+            <div class="w-2/3 flex flex-col bg-surface-container-low overflow-y-auto" id="inbox-viewer">
+                <div class="p-10">
+                    <div class="bg-surface p-8 rounded-2xl shadow-sm border border-outline/10">
+                        <div class="flex justify-between items-start mb-6 pb-6 border-b border-outline/10">
+                            <div>
+                                <h3 class="text-2xl font-headline font-bold text-tertiary mb-2">Inquiry about CIA Fellowship</h3>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-primary-container text-white rounded-full flex items-center justify-center font-bold text-lg">
+                                        J
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-on-surface">Jane Smith</p>
+                                        <p class="text-xs text-on-surface-variant">jsmith@example.edu</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-medium text-on-surface-variant bg-surface-container-high px-3 py-1 rounded-full">May 12, 2026 10:30 AM</span>
+                        </div>
+                        <div class="text-on-surface text-sm leading-relaxed whitespace-pre-wrap">Hello, 
+
+I'm interested in the upcoming Consumer Insight & Analytics fellowship program. Could you provide more details regarding the application deadline and required documentation?
+
+Thank you,
+Jane Smith</div>
+                        
+                        <div class="mt-8 pt-6 border-t border-outline/10">
+                            <button class="inline-flex items-center gap-2 bg-primary-container text-white px-5 py-2 rounded-xl text-sm font-bold opacity-50 cursor-not-allowed">
+                                <span class="material-symbols-outlined text-sm">reply</span>
+                                Reply via Mail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
