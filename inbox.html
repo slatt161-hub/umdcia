@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UMD Analytics Inbox</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;800;900&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1a1c1d",
+                    "secondary-container": "#fecb32",
+                    "outline": "#8b7171",
+                    "surface": "#faf9fa",
+                    "secondary-fixed-dim": "#f2c025",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#ab3241",
+                    "primary": "#5c0015",
+                    "background": "#faf9fa",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#8a182c",
+                    "on-tertiary-container": "#adabab",
+                    "tertiary-fixed": "#e4e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "inverse-surface": "#2f3132",
+                    "on-primary-container": "#ff8a91",
+                    "surface-dim": "#dadadb",
+                    "on-secondary-container": "#705600",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "inverse-on-surface": "#f1f0f1",
+                    "on-primary-fixed": "#40000c",
+                    "primary-container": "#811026",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#faf9fa",
+                    "surface-container": "#eeeeee",
+                    "tertiary-container": "#404040",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e3e2e3",
+                    "primary-fixed-dim": "#ffb3b5",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-surface-variant": "#574142",
+                    "primary-fixed": "#ffdada",
+                    "surface-container-high": "#e8e8e9",
+                    "on-secondary-fixed-variant": "#594400",
+                    "on-background": "#1a1c1d",
+                    "inverse-primary": "#ffb3b5",
+                    "outline-variant": "#debfbf",
+                    "secondary": "#755b00",
+                    "tertiary": "#2a2a2a",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#ffdf92",
+                    "surface-container-highest": "#e3e2e3",
+                    "surface-container-low": "#f4f3f4",
+                    "on-secondary-fixed": "#241a00",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Work Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .unread-indicator {
+            display: none;
+        }
+        .is-unread .unread-indicator {
+            display: block;
+        }
+        .is-unread .msg-name, .is-unread .msg-subject {
+            font-weight: 800;
+            color: #1a1c1d;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface flex min-h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside id="sidebar" class="h-full w-64 border-r-0 fixed left-0 top-0 bg-[#f4f3f4] dark:bg-[#1a1c1d] flex flex-col py-6 pl-4 z-50 -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out shadow-2xl md:shadow-none">
+<div class="mb-10 px-4">
+<h1 class="font-['Work_Sans'] font-bold text-[#811026] dark:text-[#ffdadb] text-xl tracking-tighter">Admin Portal</h1>
+<p class="font-['Inter'] text-sm leading-relaxed text-on-surface-variant opacity-70">Insight &amp; Analytics</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200 ease-in-out" href="admin.html">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-sm">Dashboard</span>
+</a>
+<a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200 ease-in-out" href="contentnewseditor.html">
+<span class="material-symbols-outlined mr-3" data-icon="edit_note">edit_note</span>
+<span class="font-['Inter'] text-sm">Content Manager</span>
+</a>
+<a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200 ease-in-out" href="analytics.html">
+<span class="material-symbols-outlined mr-3" data-icon="query_stats">query_stats</span>
+<span class="font-['Inter'] text-sm">Analytics Reports</span>
+</a>
+<!-- Active Tab: Inbox -->
+<a class="flex items-center px-4 py-3 bg-[#811026] text-white rounded-r-full mr-4 font-semibold transition-all duration-200 ease-in-out haptic-feedback-subtle" href="inbox.html">
+<span class="material-symbols-outlined mr-3" data-icon="mail">mail</span>
+<span class="font-['Inter'] text-sm">Inbox</span>
+</a>
+<a class="flex items-center px-4 py-3 text-[#2a2a2a] dark:text-[#e3e2e3] hover:bg-[#e3e2e3] dark:hover:bg-[#2a2a2a] rounded-r-full mr-4 transition-all duration-200 ease-in-out" href="settings.html">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-sm">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4 pr-8">
+<a href="index.html" class="w-full mb-3 bg-surface-container-highest text-on-surface py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors border border-outline-variant">
+<span class="material-symbols-outlined text-sm" data-icon="public">public</span>
+<span class="text-xs font-semibold uppercase tracking-widest">View Main Site</span>
+</a>
+<div class="mt-8 flex items-center gap-3">
+<img alt="Steve Lauring" class="w-10 h-10 rounded-full object-cover" src="steve.png"/>
+<div>
+<p class="text-sm font-bold">Steve Lauring</p>
+<p class="text-[10px] opacity-60">System Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+
+<!-- Main Canvas -->
+<main class="md:ml-64 ml-0 flex-grow flex flex-col h-screen bg-surface transition-all duration-300 w-full">
+    <!-- Mobile Header -->
+    <div class="md:hidden flex justify-between items-center bg-surface-container-low p-4 rounded-xl m-4 shadow-sm border border-outline-variant/30 shrink-0">
+        <h1 class="font-['Work_Sans'] font-bold text-primary-container text-xl tracking-tight">Admin Portal</h1>
+        <button id="mobile-menu-btn" class="text-on-surface flex items-center justify-center p-2 rounded-lg hover:bg-surface-variant transition-colors">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 px-4 md:px-12 py-4 md:py-8 border-b border-outline-variant/30 shrink-0">
+        <div>
+            <h2 class="font-headline text-2xl md:text-3xl font-black tracking-tighter text-primary-container">Contact Inquiries</h2>
+            <p class="text-sm text-on-surface-variant">Manage submissions from the public site.</p>
+        </div>
+        <button id="btn-refresh" class="flex items-center gap-2 bg-secondary-container text-on-secondary-container px-6 py-2.5 rounded-xl text-sm font-bold shadow-sm hover:scale-105 transition-transform">
+            <span class="material-symbols-outlined text-sm">refresh</span>
+            Refresh Inbox
+        </button>
+    </header>
+
+    <div class="flex-grow flex flex-col md:flex-row overflow-hidden">
+        <!-- List Pane -->
+        <div class="w-full md:w-1/3 border-b md:border-b-0 md:border-r border-outline-variant/30 bg-surface-container-lowest overflow-y-auto h-1/2 md:h-auto" id="inbox-list">
+            <!-- Items injected by JS -->
+        </div>
+
+        <!-- Reading Pane -->
+        <div class="w-full md:w-2/3 bg-surface p-6 md:p-12 overflow-y-auto flex flex-col h-1/2 md:h-auto" id="reading-pane">
+            <!-- Detail injected by JS -->
+            <div class="m-auto text-center opacity-40">
+                <span class="material-symbols-outlined text-4xl md:text-6xl mb-4">mail</span>
+                <p class="font-bold text-base md:text-lg">Select a message to read</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mobile Sidebar Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (mobileMenuBtn && sidebar) {
+            mobileMenuBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('-translate-x-full');
+            });
+            
+            // Close sidebar if clicking outside of it on mobile
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth < 768 && !sidebar.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    if (!sidebar.classList.contains('-translate-x-full')) {
+                        sidebar.classList.add('-translate-x-full');
+                    }
+                }
+            });
+        }
+
+        const inboxList = document.getElementById('inbox-list');
+        const readingPane = document.getElementById('reading-pane');
+        const btnRefresh = document.getElementById('btn-refresh');
+
+        let inquiries = [];
+
+        const loadInquiries = () => {
+            try {
+                const saved = localStorage.getItem('site_inquiries');
+                if (saved) {
+                    inquiries = JSON.parse(saved);
+                } else {
+                    inquiries = [];
+                }
+            } catch (err) {
+                console.error("Failed to load inquiries", err);
+            }
+            renderList();
+        };
+
+        const renderList = () => {
+            if (inquiries.length === 0) {
+                inboxList.innerHTML = `<div class="p-8 text-center text-on-surface-variant text-sm">No messages found.</div>`;
+                return;
+            }
+
+            inboxList.innerHTML = '';
+            inquiries.forEach(msg => {
+                const isUnread = !msg.read;
+                const activeClass = isUnread ? 'is-unread bg-white' : 'bg-surface-container-lowest opacity-80';
+                
+                const d = new Date(msg.date);
+                const dateStr = d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+
+                const item = document.createElement('div');
+                item.className = `p-6 border-b border-outline-variant/20 cursor-pointer hover:bg-surface-container-low transition-colors ${activeClass}`;
+                item.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="msg-name font-semibold text-sm truncate pr-4 relative">
+                            <span class="unread-indicator absolute -left-4 top-1.5 w-2 h-2 rounded-full bg-primary"></span>
+                            ${msg.name}
+                        </h4>
+                        <span class="text-[10px] text-on-surface-variant whitespace-nowrap">${dateStr}</span>
+                    </div>
+                    <p class="msg-subject text-sm text-on-surface-variant font-medium mb-1 truncate">${msg.subject}</p>
+                    <p class="text-xs text-on-surface-variant line-clamp-2">${msg.message}</p>
+                `;
+
+                item.addEventListener('click', () => openMessage(msg.id));
+                inboxList.appendChild(item);
+            });
+        };
+
+        const openMessage = (id) => {
+            const msgIndex = inquiries.findIndex(m => m.id === id);
+            if (msgIndex === -1) return;
+
+            const msg = inquiries[msgIndex];
+            
+            // Mark as read
+            if (!msg.read) {
+                inquiries[msgIndex].read = true;
+                localStorage.setItem('site_inquiries', JSON.stringify(inquiries));
+                renderList(); // Re-render to remove bold/indicator
+            }
+
+            const d = new Date(msg.date);
+            const fullDateStr = d.toLocaleDateString() + ' at ' + d.toLocaleTimeString();
+
+            readingPane.innerHTML = `
+                <div class="mb-8">
+                    <h2 class="font-headline text-3xl font-black text-on-surface mb-6">${msg.subject}</h2>
+                    <div class="flex justify-between items-start bg-surface-container-low p-6 rounded-xl">
+                        <div>
+                            <p class="font-bold text-lg text-primary">${msg.name}</p>
+                            <p class="text-sm text-on-surface-variant font-mono mt-1"><a href="mailto:${msg.email}" class="hover:underline">${msg.email}</a></p>
+                        </div>
+                        <span class="text-xs font-medium text-on-surface-variant px-3 py-1 bg-surface-container-highest rounded-full">${fullDateStr}</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-outline-variant/30 flex-grow shadow-sm flex flex-col">
+                    <p class="whitespace-pre-wrap text-on-surface leading-relaxed flex-grow">${msg.message}</p>
+                    <div class="mt-8 pt-6 border-t border-outline-variant/20 flex justify-end">
+                        <a href="mailto:${msg.email}?subject=Re: ${encodeURIComponent(msg.subject)}" class="bg-primary text-white px-6 py-2 rounded-xl font-bold hover:bg-primary-container transition-colors flex items-center gap-2 shadow-sm">
+                            <span class="material-symbols-outlined text-sm">reply</span>
+                            Reply to Sender
+                        </a>
+                    </div>
+                </div>
+            `;
+        };
+
+        btnRefresh.addEventListener('click', () => {
+            loadInquiries();
+            readingPane.innerHTML = `
+                <div class="m-auto text-center opacity-40">
+                    <span class="material-symbols-outlined text-6xl mb-4">mail</span>
+                    <p class="font-bold text-lg">Select a message to read</p>
+                </div>
+            `;
+        });
+
+        // Initial Load
+        loadInquiries();
+    });
+</script>
+</body></html>
+
+
+
