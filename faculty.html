@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Faculty &amp; Research | UMD Consumer Insight &amp; Analytics</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#404040",
+                        "primary-fixed-dim": "#ffb3b5",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-surface": "#1a1c1d",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-container-low": "#f4f3f4",
+                        "on-primary-fixed-variant": "#8a182c",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-tertiary-container": "#adabab",
+                        "primary-fixed": "#ffdada",
+                        "surface-variant": "#e3e2e3",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dadadb",
+                        "surface-bright": "#faf9fa",
+                        "secondary-fixed": "#ffdf92",
+                        "primary": "#5c0015",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#811026",
+                        "on-secondary-fixed-variant": "#594400",
+                        "inverse-on-surface": "#f1f0f1",
+                        "background": "#faf9fa",
+                        "outline": "#8b7171",
+                        "secondary": "#755b00",
+                        "secondary-container": "#fecb32",
+                        "on-secondary-container": "#705600",
+                        "on-primary-fixed": "#40000c",
+                        "inverse-surface": "#2f3132",
+                        "inverse-primary": "#ffb3b5",
+                        "on-surface-variant": "#574142",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "tertiary": "#2a2a2a",
+                        "surface-tint": "#ab3241",
+                        "surface-container-highest": "#e3e2e3",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "surface-container-high": "#e8e8e9",
+                        "error-container": "#ffdad6",
+                        "surface": "#faf9fa",
+                        "tertiary-fixed": "#e4e2e1",
+                        "outline-variant": "#debfbf",
+                        "secondary-fixed-dim": "#f2c025",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#ff8a91",
+                        "on-background": "#1a1c1d",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Work Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 32px 64px -12px rgba(26, 28, 29, 0.06);
+        }
+        .glass-nav {
+            background: rgba(250, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#1a1c1d]/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex items-center justify-between px-8 py-4 max-w-screen-2xl mx-auto">
+<a class="font-['Work_Sans'] font-black text-xl tracking-tighter text-[#811026] dark:text-[#ffdadb]" href="index.html">UMD Consumer Insight &amp; Analytics</a>
+<div class="hidden md:flex items-center space-x-8 font-['Work_Sans'] font-medium text-sm tracking-tight">
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="index.html">Home</a>
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="about.html">About</a>
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="academics.html">Academics</a>
+<a class="text-[#811026] dark:text-[#fecb32] border-b-2 border-[#811026] dark:border-[#fecb32] pb-1 transition-all duration-300" href="faculty.html">Faculty</a>
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="centers.html">Community</a>
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="news.html">News</a>
+<a class="text-[#2a2a2a] dark:text-[#e3e2e3] hover:text-[#811026] dark:hover:text-[#fecb32] transition-all duration-300" href="info.html">Info</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="inline-flex px-5 py-2 text-sm font-semibold rounded-xl border-2 border-[#811026] text-[#811026] hover:bg-[#811026] hover:text-white transition-all duration-300" href="adminlogin.html">Staff Login</a>
+<a class="inline-flex px-5 py-2 rounded-xl bg-[#811026] text-white hover:bg-[#fecb32] hover:text-[#1a1c1d] transition-all duration-300" href="contact.html">Contact Us</a>
+</div>
+</div>
+</nav>
+<main class="max-w-[1920px] mx-auto px-6 md:px-12">
+<!-- Hero Section: Editorial Impact -->
+<section class="py-24 md:py-32 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-primary-container leading-[1.1] mb-8">
+                    Thinkers.<br/>Researchers.<br/>Visionaries.
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed font-body">
+                    Bridging the gap between human behavior and business strategy through rigorous analytical inquiry and empirical research at the University of Minnesota Duluth.
+                </p>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-square bg-surface-container-low rounded-full overflow-hidden editorial-shadow">
+<img alt="Modern research lab environment" class="w-full h-full object-cover" data-alt="Modern analytics lab with students using high-tech displays, glass walls, clean industrial aesthetic with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuWD5JYecHQKkhFOkRfBp477Xx-Ug_suYgIQtakuq_72JfbK7V6TGMT6XnFEqRpVdxxLZ19L7mm7Ri82-gtNlVq4UzRrEbNl8-48cgP34yeV1DFjIg2-xHPTXF28cOnma59yIQI62bpafUYk3NZYb97KZy1DOzijGWBcT7hI_490at_zpcikJXoKRvLjJkjx2m0WVIOtcrQ_ZuVYg4u3XzhWcSUU6ThysCW3449dat_SZNBWdKBrBvyFrJL-tL7IS5q4ndbLI6M8b-"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-secondary-container p-8 rounded-xl shadow-lg max-w-xs">
+<span class="block text-4xl font-headline font-black text-on-secondary-container mb-2">12+</span>
+<span class="text-sm font-bold uppercase tracking-widest text-on-secondary-container">Active Labs</span>
+</div>
+</div>
+</section>
+<!-- Research Spotlight: Glassmorphism & Tonal Depth -->
+<section class="py-20 mb-24">
+<div class="bg-surface-container-low rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+<div class="p-12 md:p-20 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 mb-6 text-primary font-bold tracking-widest uppercase text-xs">
+<span class="material-symbols-outlined text-sm">science</span>
+                        Featured Lab
+                    </div>
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-tertiary mb-6 tracking-tight">Consumer Behavior Lab</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                        The vanguard of our research program, utilizing advanced biometric sensors and eye-tracking technology to decode the subconscious drivers of market preference. Under the direction of Dr. Elena Rodriguez, we translate neural responses into actionable strategy.
+                    </p>
+<div class="flex flex-wrap gap-4 items-center">
+<a class="inline-flex items-center gap-2 text-primary-container font-bold group" href="centers.html">
+                            Explore Lab Initiatives
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<div class="h-1 w-12 bg-outline-variant/30 hidden md:block"></div>
+<span class="text-on-surface-variant italic font-medium">Lead: Dr. Elena Rodriguez</span>
+</div>
+</div>
+<div class="relative min-h-[400px]">
+<img alt="Data visualization screen" class="absolute inset-0 w-full h-full object-cover" data-alt="Close up of a high resolution screen showing heatmaps and data analytics from an eye-tracking session in a dimly lit lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXpsMfgBPaEcNL3IHGnb0S5N7cW1vbt-droh9b_bkcAyv9AOu3Mge9z-ygCbQN89IYZNXqk2EMk1-OAYG4nn4UyNWJe8u_GjZWUVC5vMcONTtKohbc1uTcNGcuk8DjZwbpRTGBU_k99aU5fnDgmssTwbbfTKwYRvwoKVTJkhHCNfOeTIwD_AW74tMhIltonqs_tYaf_aM_szgtSyD4NAYSMOT0qBet1cN0kBXrgLD5khH1GFgRV_nHOOECqTjCAB98tBYFw6huJRpM"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+</div>
+</div>
+</section>
+<!-- Research Grants & Publications: Asymmetric Grid -->
+<section class="py-20 border-t border-surface-variant/50">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Grants Column -->
+<div class="lg:col-span-5">
+<div class="sticky top-32">
+<div class="bg-primary-container text-white p-12 rounded-3xl relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-5xl md:text-6xl font-headline font-black mb-4">$1.2M</h3>
+<p class="text-xl font-medium text-on-primary-container mb-6 leading-tight">National Science Foundation Research Grant</p>
+<p class="text-on-primary/80 mb-8 leading-relaxed">
+                                    Awarded for the longitudinal study of "Digital Trust Ecosystems in the Age of Algorithmic Consumption."
+                                </p>
+<div class="w-full h-px bg-white/20 mb-8"></div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white">verified</span>
+</div>
+<span class="text-sm font-bold uppercase tracking-widest">Active Funding Phase</span>
+</div>
+</div>
+<!-- Aesthetic Texture -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-secondary-container/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</div>
+<!-- Publications Column -->
+<div class="lg:col-span-7">
+<h2 class="font-headline text-3xl font-bold mb-12 flex items-center gap-4">
+                        Latest Publications
+                        <span class="h-px flex-1 bg-surface-variant"></span>
+</h2>
+<div class="space-y-12">
+<!-- Publication Item 1 -->
+<div class="group cursor-pointer">
+<span class="text-xs font-bold text-secondary tracking-widest uppercase mb-3 block">Journal of Marketing Science • 2024</span>
+<h4 class="text-2xl font-bold font-headline text-tertiary mb-3 group-hover:text-primary transition-colors">The Intersection of Neuro-Marketing and Predictive Modeling</h4>
+<p class="text-on-surface-variant leading-relaxed mb-4">An exploration of how biometric feedback loops can increase the accuracy of purchase intent models by 42%.</p>
+<div class="flex gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded text-xs font-semibold">Neuromarketing</span>
+<span class="bg-surface-container-high px-3 py-1 rounded text-xs font-semibold">Data Modeling</span>
+</div>
+</div>
+<!-- Publication Item 2 -->
+<div class="group cursor-pointer">
+<span class="text-xs font-bold text-secondary tracking-widest uppercase mb-3 block">Digital Behavior Review • 2023</span>
+<h4 class="text-2xl font-bold font-headline text-tertiary mb-3 group-hover:text-primary transition-colors">Quantifying Consumer Trust in Blockchain Transactions</h4>
+<p class="text-on-surface-variant leading-relaxed mb-4">Empirical study on the transparency paradox and its impact on brand loyalty in decentralized finance.</p>
+<div class="flex gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded text-xs font-semibold">FinTech</span>
+<span class="bg-surface-container-high px-3 py-1 rounded text-xs font-semibold">Trust Logic</span>
+</div>
+</div>
+<!-- Publication Item 3 -->
+<div class="group cursor-pointer">
+<span class="text-xs font-bold text-secondary tracking-widest uppercase mb-3 block">Insight Analytics Quarterly • 2023</span>
+<h4 class="text-2xl font-bold font-headline text-tertiary mb-3 group-hover:text-primary transition-colors">Heuristic Biases in High-Frequency Retail Environments</h4>
+<p class="text-on-surface-variant leading-relaxed mb-4">Identifying the structural cognitive shortcuts used by consumers in fast-fashion digital storefronts.</p>
+<div class="flex gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded text-xs font-semibold">Heuristics</span>
+<span class="bg-surface-container-high px-3 py-1 rounded text-xs font-semibold">E-Commerce</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Faculty Directory: Bento Style Grid -->
+<section class="py-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+<div>
+<h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tight text-tertiary mb-4">Expert Faculty</h2>
+<p class="text-on-surface-variant max-w-xl text-lg">Guided by world-class educators who are active practitioners in the global analytics landscape.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="bg-primary-container text-white px-6 py-2 rounded-full text-sm font-bold shadow-sm">All Faculty</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-full text-sm font-bold hover:bg-surface-container-highest transition-colors">Market Insights</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-full text-sm font-bold hover:bg-surface-container-highest transition-colors">Data Science</button>
+</div>
+</div>
+<div class="relative group">
+<div id="faculty-list" class="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory hide-scrollbar">
+    <!-- Dynamic items injected here -->
+</div>
+<button id="scroll-left" class="absolute left-0 top-1/2 -translate-y-[120%] -ml-6 w-12 h-12 rounded-full bg-white shadow-xl text-primary flex items-center justify-center hover:scale-110 transition-transform opacity-0 group-hover:opacity-100 z-10 hidden"><span class="material-symbols-outlined">arrow_back_ios_new</span></button>
+<button id="scroll-right" class="absolute right-0 top-1/2 -translate-y-[120%] -mr-6 w-12 h-12 rounded-full bg-white shadow-xl text-primary flex items-center justify-center hover:scale-110 transition-transform opacity-0 group-hover:opacity-100 z-10 hidden"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+</div>
+</section>
+<!-- Call to Action: Focus & Conversion -->
+<section class="py-32">
+<div class="bg-tertiary text-white rounded-3xl p-12 md:p-24 text-center relative overflow-hidden">
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="font-headline text-5xl md:text-6xl font-black mb-8 leading-tight">Join the Lab.</h2>
+<p class="text-lg md:text-xl text-stone-400 mb-12">
+                        We are looking for inquisitive minds to assist in the next generation of consumer research. Undergrad and graduate positions are currently open for the Spring semester.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform">
+                            Apply for Research Role
+                        </button>
+<button class="border border-stone-700 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-stone-800 transition-colors">
+                            Contact Admissions
+                        </button>
+</div>
+</div>
+<!-- Abstract Design Elements -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/10 -skew-x-12 transform translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-1/4 h-1/2 border-l border-b border-white/5 m-12"></div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-[#2a2a2a] text-gray-400 w-full mt-20 px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+        <!-- Column 1: Contact & Visit -->
+        <div class="flex flex-col space-y-4">
+            <div class="font-['Work_Sans'] font-bold text-lg text-white mb-2">Contact & Visit</div>
+            <address class="not-italic text-xs leading-relaxed text-gray-400 mb-2">
+                1049 University Drive<br />
+                Duluth, MN 55812
+            </address>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://about.d.umn.edu/contact-us">Contact UMD</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://admissions.d.umn.edu/visit">Campus Tours</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://www.d.umn.edu/maps/">Maps & Directions</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://tps.d.umn.edu/">Transportation & Parking</a>
+        </div>
+        
+        <!-- Column 2: Resources For -->
+        <div class="flex flex-col space-y-4">
+            <h4 class="text-white font-bold text-sm mb-2">Resources For</h4>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://admissions.d.umn.edu/ready">Newly Admitted Students</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://about.d.umn.edu/current-students">Current Students</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://about.d.umn.edu/employee-resources">Employee Resources</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://alumni.d.umn.edu/">Alumni</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://student-life.d.umn.edu/parents-and-family">Parents & Family</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://about.d.umn.edu/community">Community & Visitors</a>
+        </div>
+
+        <!-- Column 3: Search & Give -->
+        <div class="flex flex-col space-y-4">
+            <h4 class="text-white font-bold text-sm mb-2">Search & Give</h4>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://give.d.umn.edu/">Support UMD</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://www.d.umn.edu/department-directory/">Directory</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://hr.umn.edu/Jobs/Find-Job">Employment</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://calendar.d.umn.edu/">Events</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://lib.d.umn.edu/">Library</a>
+        </div>
+
+        <!-- Column 4: Connect -->
+        <div class="flex flex-col space-y-4">
+            <h4 class="text-white font-bold text-sm mb-2">Connect</h4>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://lsbe.d.umn.edu/" target="_blank" rel="noopener noreferrer">LSBE Home</a>
+            <a class="text-xs hover:text-white transition-colors duration-200" href="https://d.umn.edu/" target="_blank" rel="noopener noreferrer">UMD Home</a>
+            
+            <div class="flex flex-col gap-3 mt-4">
+                <a href="https://www.linkedin.com/company/umd-lsbe-consumer-insights-analytics-program/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs hover:text-[#fecb32] transition-colors">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="contact.html" class="flex items-center gap-2 text-xs hover:text-[#fecb32] transition-colors">
+                    <span class="material-symbols-outlined text-[16px]">mail</span>
+                    Contact Program
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="max-w-screen-2xl mx-auto border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-[10px] uppercase tracking-widest">© 2024 University of Minnesota Duluth - Consumer Insight &amp; Analytics</p>
+        <div class="flex flex-wrap justify-center gap-4 text-[10px] uppercase tracking-widest text-gray-400">
+            <a href="https://privacy.umn.edu/" class="hover:text-white">Privacy</a>
+            <span class="opacity-50">|</span>
+            <a href="https://accessibility.umn.edu/" class="hover:text-white">Accessibility</a>
+            <span class="opacity-50">|</span>
+            <a href="https://d.umn.edu/about-umd" class="hover:text-white">About UMD</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const facultyContainer = document.getElementById("faculty-list");
+        const scrollLeft = document.getElementById("scroll-left");
+        const scrollRight = document.getElementById("scroll-right");
+
+        const defaults = [
+            { name: "Dr. Elena Rodriguez", title: "Professor & Lead Researcher", bio: "Expertise: Neuromarketing, Behavioral Economics, Biometric Analytics.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCqx3zPtGM0kNjxCtZVjfBuaFaLXf64x00Wbdj2-uPbIFXYQzOvuj4Lh9nYKA19ikorViqRjzVJ-mDAJ8jDBLxFj5y_ZPqO-2S6D-hJgDHzvLtuuQnoCdw8b5eatZ868q1_qFYwzjma-nRgkIrjzWnXB6ZGP77bIGDpp_Kfw5zZ_Jh8KhbpNPRk5TWNB0IpazyW8AIBseOh2h7mgzvr6EPZQghf-eyJQezw7UepLYVywBbo2LvkJrBjon1S1OZyDxcnT8fo3pD653Dl" },
+            { name: "Dr. Marcus Thorne", title: "Associate Professor", bio: "Expertise: Predictive Modeling, Retail Tech, Consumer Loyalty Systems.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB8gYrkddmERSZrbBYEc-kIoKbOfrHvRXrN85XsIEM9miOw3fL4H9buw85Jwd6LRWQa4lPe9SKGZgsUAqfbmWipWDGZd3jlT-FiXJQtlxJRnDPM_t-t4aDduo1loguvpr7T34pfMtS48Phx1N8ZTlYsvONWXkmYsI5A490DfW3MfTMRgIVTeVQ2dEL2aRqQVpwRdqj3aLF-1pHv0rHFn3adiwcLRjZUkea3JqsP-sEB4VD9jF2sBLBbFp6DBmKlYxZo2ipdS6om16y3" },
+            { name: "Prof. Sarah Jenkins", title: "Data Science Lead", bio: "Expertise: Machine Learning in Marketing, NLP, Sentiment Analysis.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDvFpsBr7iu9zoRPxcN8xiFQWIkFFCcCQM6li6VudOn_QQVQ8GGJPG_BansFVganSjpe04VnKnmTCUDwnwy5bcZ_oo419AyAJqXS147Cozh2S5eU93JJ3EhwO0oYpWSMu-rYP5DbM0ILdv0jY8KlXgYDTFK82BCO8bqk-sDVFR3z1gGOcD2ToU3LiKNJVpUd5fAp132HEgj_5NgOVKC-8jeSJLgJDBPy9CzQ2ncifjQXw9keih8Gk0jqIH0XYaFmac2Cqv5U5IcIsG6" },
+            { name: "Dr. Arthur Vance", title: "Senior Lecturer", bio: "Expertise: Market Ethics, Global Consumption Trends, Strategy Design.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAa7p_cyzUlyEBUbyDpWH2FDEQzZiL_Mbf5T6TSK098y5EvHLo0WLUePupV2rWZ8LLQHAq9LsilxYnREefjxUJyjiCxUEVErbWF9eMBlM3mtzLZq1WkePVYNq41ggTFKw7QC_-1GOjwS889cJDUgePrcZ0T92z-KP-ucjPYab29ypaYjJgY7uFwLmro5JWZyPQ47C8xnAXzyHxsYnaqWzopdiKe0g0DtUncjlOldHvm9F7BBgIsnhN9N96LJIjGFI9rmYXw3HOQsvV5" }
+        ];
+
+        let facultyData = [];
+        try {
+            const saved = localStorage.getItem("site_faculty");
+            if (saved) {
+                facultyData = JSON.parse(saved);
+            }
+        } catch(e) { }
+
+        if (!facultyData || facultyData.length === 0) {
+            facultyData = defaults;
+        }
+
+        if (facultyContainer) {
+            facultyContainer.innerHTML = '';
+            facultyData.forEach(faculty => {
+                const imgMarkup = faculty.image 
+                    ? `<img alt="${faculty.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${faculty.image}">`
+                    : `<div class="w-full h-full flex items-center justify-center bg-surface-container"><span class="material-symbols-outlined text-4xl text-on-surface-variant">person</span></div>`;
+
+                const html = `
+                    <div class="group w-[80vw] md:w-[calc(50%-1.5rem)] xl:w-[calc(25%-1.5rem)] shrink-0 snap-start">
+                        <div class="aspect-[4/5] bg-surface-container-low rounded-2xl overflow-hidden mb-6 relative">
+                            ${imgMarkup}
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                        <h3 class="font-headline text-xl font-bold text-tertiary">${faculty.name}</h3>
+                        <p class="text-primary font-bold text-sm mb-3">${faculty.title}</p>
+                        <p class="text-sm text-on-surface-variant mb-4">${faculty.bio}</p>
+                    </div>
+                `;
+                facultyContainer.insertAdjacentHTML('beforeend', html);
+            });
+
+            if (facultyData.length > 4) {
+                scrollLeft.classList.remove('hidden');
+                scrollRight.classList.remove('hidden');
+            }
+            
+            scrollLeft.addEventListener('click', () => {
+                const cardWidth = facultyContainer.children[0].offsetWidth;
+                facultyContainer.scrollBy({ left: -(cardWidth + 32), behavior: 'smooth' });
+            });
+            scrollRight.addEventListener('click', () => {
+                const cardWidth = facultyContainer.children[0].offsetWidth;
+                facultyContainer.scrollBy({ left: (cardWidth + 32), behavior: 'smooth' });
+            });
+        }
+    });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    const desktopLinksContainer = nav.querySelector('.hidden.md\\:flex.items-center.space-x-8');
+    const rightButtonsContainer = nav.querySelector('.flex.items-center.gap-4');
+    if (desktopLinksContainer) {
+        desktopLinksContainer.classList.remove('md:flex');
+        desktopLinksContainer.classList.add('lg:flex');
+    }
+    if (rightButtonsContainer) {
+        rightButtonsContainer.classList.add('hidden', 'lg:flex');
+        rightButtonsContainer.classList.remove('flex');
+    }
+    const topBar = nav.querySelector('.flex.items-center.justify-between');
+    if (topBar && !nav.querySelector('#mobile-hamburger')) {
+        const hamburgerBtn = document.createElement('button');
+        hamburgerBtn.id = 'mobile-hamburger';
+        hamburgerBtn.className = 'lg:hidden text-[#811026] dark:text-[#fecb32] focus:outline-none p-2 ml-auto';
+        hamburgerBtn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+        topBar.appendChild(hamburgerBtn);
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'hidden lg:hidden bg-white/95 dark:bg-[#1a1c1d]/95 backdrop-blur-md border-t border-outline-variant/30 overflow-hidden';
+        const mobileLinksDiv = document.createElement('div');
+        mobileLinksDiv.className = 'flex flex-col px-8 py-6 space-y-4 font-["Work_Sans"] font-medium text-lg text-center';
+        if (desktopLinksContainer) {
+            Array.from(desktopLinksContainer.children).forEach(link => {
+                const clone = link.cloneNode(true);
+                clone.style.display = 'block';
+                clone.style.padding = '8px 0';
+                mobileLinksDiv.appendChild(clone);
+            });
+        }
+        if (rightButtonsContainer) {
+            const separator = document.createElement('hr');
+            separator.className = 'border-outline-variant/30 my-4 w-full';
+            mobileLinksDiv.appendChild(separator);
+            Array.from(rightButtonsContainer.children).forEach(btn => {
+                const clone = btn.cloneNode(true);
+                clone.className = clone.className + ' block w-full text-center mt-2';
+                mobileLinksDiv.appendChild(clone);
+            });
+        }
+        mobileMenu.appendChild(mobileLinksDiv);
+        nav.appendChild(mobileMenu);
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+});
+</script>
+</body></html>
+
